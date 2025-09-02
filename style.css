@@ -1,0 +1,339 @@
+/* styles.css
+
+   Modern resume styles for S Ramchandran
+
+*/
+
+/* ---------- Reset & base ---------- */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html,body { height: 100%; }
+
+body{
+
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+
+  background: #f3f6fb;
+
+  color: #222;
+
+  -webkit-font-smoothing:antialiased;
+
+  -moz-osx-font-smoothing:grayscale;
+
+  line-height: 1.5;
+
+  padding: 24px;
+
+}
+
+/* ---------- Container ---------- */
+
+.container{
+
+  max-width: 920px;
+
+  margin: 0 auto;
+
+  background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+
+  padding: 32px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 10px 30px rgba(20,30,60,0.08);
+
+  border: 1px solid rgba(16,24,40,0.04);
+
+}
+
+/* ---------- Header ---------- */
+
+.header{
+
+  display: flex;
+
+  gap: 20px;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 18px;
+
+}
+
+.profile-left{
+
+  min-width: 0;
+
+}
+
+h1{
+
+  font-size: 1.9rem;
+
+  letter-spacing: -0.02em;
+
+  color: #0f1724;
+
+}
+
+.contact{
+
+  color: #475569;
+
+  font-size: 0.95rem;
+
+  margin-top: 6px;
+
+}
+
+/* ---------- Two-column layout ---------- */
+
+.layout{
+
+  display: grid;
+
+  grid-template-columns: 1fr 320px;
+
+  gap: 28px;
+
+}
+
+/* Left: main content */
+
+.main{
+
+  min-width: 0;
+
+}
+
+/* Right: sidebar */
+
+.sidebar{
+
+  background: linear-gradient(180deg,#ffffff,#fbfdff);
+
+  border-radius: 10px;
+
+  padding: 16px;
+
+  border: 1px solid rgba(16,24,40,0.03);
+
+  box-shadow: 0 6px 18px rgba(16,24,40,0.03);
+
+}
+
+/* ---------- Section headings ---------- */
+
+.section{
+
+  margin-bottom: 18px;
+
+}
+
+.section h2{
+
+  font-size: 1.05rem;
+
+  color: #2563eb; /* blue accent */
+
+  margin-bottom: 10px;
+
+  display: inline-block;
+
+  padding-left: 8px;
+
+  border-left: 4px solid rgba(37,99,235,0.15);
+
+}
+
+/* ---------- Summary / Highlight ---------- */
+
+.highlight{
+
+  background: linear-gradient(90deg,rgba(37,99,235,0.06),rgba(99,102,241,0.02));
+
+  padding: 10px 12px;
+
+  border-radius: 8px;
+
+  color: #0f1724;
+
+  margin-bottom: 12px;
+
+  border-left: 4px solid rgba(37,99,235,0.25);
+
+  font-size: 0.98rem;
+
+}
+
+/* ---------- Lists ---------- */
+
+ul.clean{
+
+  list-style: none;
+
+  padding-left: 0;
+
+}
+
+ul.clean li{
+
+  padding: 6px 0;
+
+  font-size: 0.98rem;
+
+  color: #26303f;
+
+}
+
+/* skill pills */
+
+.skills{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:8px;
+
+}
+
+.skill-pill{
+
+  font-size: 0.88rem;
+
+  padding: 6px 12px;
+
+  border-radius: 999px;
+
+  background: linear-gradient(180deg,#2563eb,#1e40af);
+
+  color: white;
+
+  box-shadow: 0 4px 10px rgba(37,99,235,0.12);
+
+}
+
+/* education / small meta */
+
+.meta{
+
+  font-size: 0.94rem;
+
+  color:#334155;
+
+}
+
+/* achievements */
+
+.achievements li::before{
+
+  content: "★";
+
+  margin-right: 8px;
+
+  color: #f59e0b;
+
+}
+
+/* ---------- Footer ---------- */
+
+footer{
+
+  text-align:center;
+
+  color:#64748b;
+
+  font-size:0.9rem;
+
+  margin-top: 18px;
+
+}
+
+/* ---------- Utility: print & download friendly ---------- */
+
+@media print {
+
+  body { background: white; padding: 0; }
+
+  .container{ box-shadow:none; border:none; border-radius:0; padding: 0; max-width: 100%; }
+
+  .sidebar{ display: none; } /* hide sidebar on print for compactness */
+
+  h1{ font-size: 20pt; }
+
+  .skill-pill{ box-shadow:none; -webkit-print-color-adjust: exact; }
+
+}
+
+/* ---------- Responsive (mobile) ---------- */
+
+@media (max-width: 880px){
+
+  .layout{ grid-template-columns: 1fr; }
+
+  .sidebar{ order: 2; }
+
+  .header{ gap: 8px; }
+
+}
+
+/* ---------- Dark mode (toggle-ready) ---------- */
+
+:root{
+
+  --bg: #f3f6fb;
+
+  --card: #ffffff;
+
+  --text: #111827;
+
+  --muted: #475569;
+
+}
+
+.dark{
+
+  --bg: #0b1220;
+
+  --card: #071129;
+
+  --text: #e6eef8;
+
+  --muted: #9aa6bd;
+
+}
+
+body{
+
+  background: var(--bg);
+
+  color: var(--text);
+
+}
+
+.container{
+
+  background: var(--card);
+
+  border-color: rgba(255,255,255,0.03);
+
+}
+
+.contact, .meta { color: var(--muted); }
+
+/* Small decorative animation for headings */
+
+.section h2{
+
+  transition: transform .25s ease, opacity .25s ease;
+
+}
+
+.section h2:hover{ transform: translateX(6px); opacity: 0.95; }
